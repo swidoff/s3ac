@@ -25,7 +25,6 @@ def _list_s3_buckets() -> List[str]:
 
 def _list_s3_keys(bucket: str, key_prefix: str) -> List[str]:
     """Returns the list of folder and file completions for the given prefix"""
-
     # noinspection PyUnresolvedReferences
     response = client.list_objects_v2(Bucket=bucket, Prefix=key_prefix, Delimiter="/")
 
