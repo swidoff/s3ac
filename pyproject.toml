@@ -25,7 +25,7 @@ dependencies = ["boto3"]
 "Bug Tracker" = "https://github.com/swidoff/s3ac/issues"
 
 [tool.hatch.envs.test]
-dependencies = [
-    "pytest",
-    "moto",
-]
+dependencies = ["pytest", "moto"]
+
+[tool.black]
+line-length = 120

@@ -18,23 +18,24 @@ def s3(path: str) -> str:
 @cache
 def _list_s3_buckets() -> List[str]:
     """Returns the list of available buckets in this account."""
-    global client
     # noinspection PyUnresolvedReferences
     response = client.list_buckets()
     return [bucket_obj["Name"] for bucket_obj in response.get("Buckets", [])]
 
 
 def _list_s3_keys(bucket: str, key_prefix: str) -> List[str]:
+    """Returns the list of folder and file completions for the given prefix"""
+
     # noinspection PyUnresolvedReferences
     response = client.list_objects_v2(Bucket=bucket, Prefix=key_prefix, Delimiter="/")
 
+    keys = []
     if "CommonPrefixes" in response:
-        keys = [obj["Prefix"] for obj in response["CommonPrefixes"]]
-    else:
-        # noinspection PyUnresolvedReferences
-        response = client.list_objects_v2(Bucket=bucket, Prefix=key_prefix)
-        keys = [obj["Key"] for obj in response.get("Contents", [])]
-
+        for obj in response["CommonPrefixes"]:
+            keys.append(obj["Prefix"])
+    if "Contents" in response:
+        for obj in response.get("Contents"):
+            keys.append(obj["Key"])
     return keys
 
 
