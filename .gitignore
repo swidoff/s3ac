@@ -1,3 +1,4 @@
 /.idea/
 /s3ac.iml
-/venv/
+/venv*/
+**/__pycache__
