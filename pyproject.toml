@@ -19,6 +19,12 @@ classifiers = [
 ]
 dependencies = ["boto3"]
 
+[tool.hatch.build.targets.sdist]
+packages = ["src/s3ac"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/s3ac"]
+
 [project.urls]
 "Homepage" = "https://github.com/swidoff/s3ac"
 "Bug Tracker" = "https://github.com/swidoff/s3ac/issues"
