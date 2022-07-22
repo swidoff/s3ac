@@ -1,6 +1,6 @@
 # s3ac
 
-A small IPython extension that auto-completes s3 ARNs.
+A small IPython extension that auto-completes s3 URIS.
 
 To install: `pip install s3ac`
 
@@ -21,6 +21,6 @@ In [3]: s3("<hit tab>
 To use, start an expression with `s3("`, hit tab, see buckets. After selecting a bucket and hitting tab, `s3
 ("my_bucket/` will complete prefixes up to the next slash and objects under a prefix ending in a slash.
 
-The s3 function will return an ARN (`"s3://my-bucket/dir1/dir2/file.txt"`).
+The s3 function will return a URI (`"s3://my-bucket/dir1/dir2/file.txt"`).
 
 Depends only on boto3 and requires an AWS credentials file in ~/.aws.

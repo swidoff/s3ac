@@ -8,7 +8,7 @@ version = "0.0.1"
 authors = [
     { name="Seth Widoff", email="swidoff@gmail.com" },
 ]
-description = "Autocomplete s3 ARNs in IPython."
+description = "Autocomplete s3 URIs in IPython."
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.7"

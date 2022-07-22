@@ -11,7 +11,7 @@ client = None
 
 
 def s3(path: str) -> str:
-    """Function whose name triggers s3 auto-complete. Returns an s3 ARN."""
+    """Function whose name triggers s3 auto-complete. Returns an s3 URI."""
     return f"s3://{path}"
 
 
@@ -51,11 +51,7 @@ def _completion(self: IPCompleter, text: str) -> List[str]:
             res = sorted({text + key[len(key_prefix) :] for key in keys})
         else:
             buckets = _list_s3_buckets()
-            res = [
-                text + bucket[len(path) :] + "/"
-                for bucket in buckets
-                if bucket.startswith(path)
-            ]
+            res = [text + bucket[len(path) :] + "/" for bucket in buckets if bucket.startswith(path)]
     return res
 
 
