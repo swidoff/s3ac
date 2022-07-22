@@ -11,13 +11,12 @@ authors = [
 description = "Autocomplete s3 URIs in IPython."
 readme = "README.md"
 license = { file="LICENSE" }
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dynamic = ["version"]
 dependencies = ["boto3"]
 
 [project.urls]

@@ -1,4 +1,4 @@
-from functools import cache
+from functools import lru_cache
 from typing import List
 import re
 
@@ -15,7 +15,7 @@ def s3(path: str) -> str:
     return f"s3://{path}"
 
 
-@cache
+@lru_cache(maxsize=None)
 def _list_s3_buckets() -> List[str]:
     """Returns the list of available buckets in this account."""
     # noinspection PyUnresolvedReferences
