@@ -1,6 +1,6 @@
 # s3ac
 
-A small IPython extension that auto-completes s3 URIS.
+A small IPython extension that auto-completes S3 URIS.
 
 To install: `pip install s3ac`
 
