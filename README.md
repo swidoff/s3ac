@@ -18,9 +18,19 @@ In [3]: s3("<hit tab>
 ```
 
 
-To use, start an expression with `s3("`, hit tab, see buckets. After selecting a bucket and hitting tab, `s3
-("my_bucket/` will complete prefixes up to the next slash and objects under a prefix ending in a slash.
+To use, start an expression with `s3("`, hit tab, see buckets. 
+After selecting a bucket and hitting tab, `s3 ("my_bucket/` 
+will complete prefixes up to the next slash and objects with that prefix.
 
-The s3 function will return a URI (`"s3://my-bucket/dir1/dir2/file.txt"`).
+For example, tabbing after `s3("my_bucket1/d` might suggest:
+
+```
+my_bucket1/diary.txt
+my_bucket1/dir1/
+my_bucket1/dir2/
+my_bucket1/dungeons_and_dragons.csv
+```
+
+The s3 function will return a URI (for example, `"s3://my_bucket/dir1/dir2/file.txt"`).
 
 Depends only on boto3 and requires an AWS credentials file in ~/.aws.
